@@ -1,0 +1,148 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section
+  id="wrapper"
+  class="login-register login-sidebar"
+  style="background-image: url(assets/images/background/login-register.jpg)"
+>
+  <div class="login-box card">
+    <div class="card-body">
+      <form
+        class="form-horizontal form-material"
+        id="loginform"
+        (submit)="submitItem()"
+      >
+        <div class="form-group m-t-20">
+          <div class="col-xs-2">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="nif"
+              required=""
+              placeholder="NIF"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.nif"
+            />
+            <label><small>NIF/NIE</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-2">
+            <input
+              class="form-control input-sm"
+              type="password"
+              name="password"
+              required=""
+              placeholder="Password"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.password"
+            />
+            <label><small>Password</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-2">
+            <input
+              class="form-control input-sm"
+              type="password"
+              name="password"
+              required=""
+              placeholder=" Confirm Password"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.password"
+            />
+            <label><small>Confirm password</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="username"
+              required=""
+              placeholder="Username"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.username"
+            />
+            <label><small>Username</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="cip"
+              required=""
+              placeholder="CIP"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.cip"
+            />
+            <label><small>CIP</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="mobilePhone"
+              required=""
+              placeholder="Mobil Phone"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.mobilePhone"
+            />
+            <label><small>Mobil Phone</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="email"
+              name="email"
+              placeholder="email"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.email"
+            />
+            <label><small>Email</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="Date"
+              datetime="yyyy-MM-dd HH:mm:ss"
+              name="birthdate"
+              placeholder="Birthdate"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.birthdate"
+            />
+            <label><small>Birthdate</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="role"
+              placeholder="Role"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.role"
+              disabled
+            />
+            <label><small>Role</small></label>
+          </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
+              type="submit"
+            >
+              Registrar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
