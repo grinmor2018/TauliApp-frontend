@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ComponentsRoutes } from './component.routing';
+import { CercaPipe } from '../pipes/cerca.pipe';
 
 import { LlistaRegUsuarisComponent } from './llista-reg-usuaris/llista-reg-usuaris.component';
 import { EditarComponent } from './editar/editar.component';
@@ -20,7 +21,10 @@ import { EditarComponent } from './editar/editar.component';
   ],
   declarations: [
     LlistaRegUsuarisComponent,
-    EditarComponent
-  ]
+    EditarComponent,
+    CercaPipe,
+  ],
+  providers:[ ],
+  exports: [CercaPipe]
 })
 export class ComponentsModule {}

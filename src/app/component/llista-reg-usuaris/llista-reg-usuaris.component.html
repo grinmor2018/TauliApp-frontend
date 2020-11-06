@@ -2,7 +2,7 @@
 <!-- Formulari Editar -->
 <!-- ============================================================== -->
 
-<div class="login-box card" [hidden] = "!editing">
+<div class="login-box card" [hidden]="!editing">
   <div class="card-header">
     <i class="fa fa-align-justify"></i> Editar usuari
   </div>
@@ -23,32 +23,6 @@
             [(ngModel)]="this.respostasService.selectedRegUsuari.nif"
           />
           <label><small>NIF/NIE</small></label>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-2">
-          <input
-            class="form-control input-sm"
-            type="password"
-            name="password"
-            required=""
-            placeholder="Password"
-            [(ngModel)]="this.respostasService.selectedRegUsuari.password"
-          />
-          <label><small>Password</small></label>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-2">
-          <input
-            class="form-control input-sm"
-            type="password"
-            name="password"
-            required=""
-            placeholder=" Confirm Password"
-            [(ngModel)]="this.respostasService.selectedRegUsuari.password"
-          />
-          <label><small>Confirm password</small></label>
         </div>
       </div>
       <div class="form-group">
@@ -145,7 +119,6 @@
 <!-- End formulari -->
 <!-- ============================================================== -->
 
-
 <!-- ============================================================== -->
 <!-- Llistat -->
 <!-- ============================================================== -->
@@ -156,6 +129,30 @@
       <i class="fa fa-align-justify"></i> Usuaris registrats
     </div>
     <div class="card-body">
+      <div class="form-group row m-t-2">
+        <label class="col-md-1" for="selectCerca">Cerca per</label>
+        <div class="col-md-2">
+          <select
+            id="selectCerca"
+            name="selectCerca"
+            class="form-control form-control"
+            [(ngModel)]="selectCerca"
+          >
+            <option value="0">NIF</option>
+            <option value="1">Username</option>
+            <option value="2">CIP</option>
+            <option value="3">Email</option>
+          </select>
+        </div>
+        <input
+          class="form-control input-sm col-md-4"
+          type="text"
+          name="filtre"
+          placeholder="Cercar"
+          [(ngModel)]="filtre"
+          autofocus
+        />
+      </div>
       <table class="table table-bordered table-hover table-sm">
         <thead>
           <tr>
@@ -170,7 +167,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items">
+          <tr *ngFor="let item of items | cerca: filtre: selectCerca">
             <td>{{ item.nif }}</td>
             <td>{{ item.username }}</td>
             <td>{{ item.cip }}</td>
@@ -178,12 +175,22 @@
             <td>{{ item.email }}</td>
             <td>{{ item.birthdate }}</td>
             <td>{{ item.role }}</td>
-            <td><button type="button" class="btn btn-sm btn-primary" (click)= "loadForm(item.id)">
-              <i class="fa fa-check"></i> Editar
-            </button>
-            <button type="button" class="btn btn-sm btn-danger" (click)= "deleteItem(item.id)">
-              <i class="fa fa-times"></i> Esborrar
-            </button></td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-sm btn-primary"
+                (click)="loadForm(item.id)"
+              >
+                <i class="fa fa-check"></i> Editar
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-danger"
+                (click)="deleteItem(item.id)"
+              >
+                <i class="fa fa-times"></i> Esborrar
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

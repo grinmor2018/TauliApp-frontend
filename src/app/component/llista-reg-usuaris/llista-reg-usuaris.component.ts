@@ -31,6 +31,9 @@ export class LlistaRegUsuarisComponent implements OnInit {
 
   editing: boolean = false;
 
+  filtre = '';
+  selectCerca = '0';
+
   ngOnInit(): void {
     this.getItems();
     this.respostasService.selectedRegUsuari = this.item;

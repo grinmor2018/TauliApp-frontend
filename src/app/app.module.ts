@@ -29,10 +29,6 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { Page404Component } from './pages/page404/page404.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RespostasService } from './services/respostas.service';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-
-import { TokenInterceptorService } from './services/token-interceptor.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
