@@ -30,12 +30,38 @@
           <input
             class="form-control input-sm"
             type="text"
-            name="username"
+            name="nom"
             required=""
-            placeholder="Username"
-            [(ngModel)]="this.respostasService.selectedRegUsuari.username"
+            placeholder="Nom"
+            [(ngModel)]="this.respostasService.selectedRegUsuari.nom"
           />
-          <label><small>Username</small></label>
+          <label><small>Nom</small></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <input
+            class="form-control input-sm"
+            type="text"
+            name="cognom1"
+            required=""
+            placeholder="Cognom"
+            [(ngModel)]="this.respostasService.selectedRegUsuari.cognom1"
+          />
+          <label><small>Primer cognom</small></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <input
+            class="form-control input-sm"
+            type="text"
+            name="cognom2"
+            required=""
+            placeholder="Cognom"
+            [(ngModel)]="this.respostasService.selectedRegUsuari.cognom2"
+          />
+          <label><small>Segon cognom</small></label>
         </div>
       </div>
       <div class="form-group">
@@ -103,14 +129,26 @@
         </div>
       </div>
       <div class="form-group text-center m-t-20">
-        <div class="col-xs-12">
-          <button
-            class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
-            type="submit"
-          >
-            Confirmar
-          </button>
+        <div class="row justify-content-center">
+          <div class="col-xs-4 mr-1">
+            <button
+              class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"
+              type="submit"
+            >
+              Confirmar
+            </button>
+          </div>
+          <div class="col-xs-4">
+            <button
+              class="btn btn-warning btn-lg btn-block text-uppercase waves-effect waves-light"
+              type="button"
+              (click)="resetForm()"
+            >
+              Cancelar
+            </button>
+          </div>
         </div>
+
       </div>
     </form>
   </div>
@@ -139,7 +177,7 @@
             [(ngModel)]="selectCerca"
           >
             <option value="0">NIF</option>
-            <option value="1">Username</option>
+            <option value="1">Cognom1</option>
             <option value="2">CIP</option>
             <option value="3">Email</option>
           </select>
@@ -157,7 +195,9 @@
         <thead>
           <tr>
             <th>NIF</th>
-            <th>Username</th>
+            <th>Nom</th>
+            <th>Cognom 1</th>
+            <th>Cognom 2</th>
             <th>Cip</th>
             <th>Telèfon</th>
             <th>Email</th>
@@ -169,7 +209,9 @@
         <tbody>
           <tr *ngFor="let item of items | cerca: filtre: selectCerca">
             <td>{{ item.nif | uppercase }}</td>
-            <td>{{ item.username | titlecase }}</td>
+            <td>{{ item.nom | titlecase }}</td>
+            <td>{{ item.cognom1 | titlecase }}</td>
+            <td>{{ item.cognom2 | titlecase }}</td>
             <td>{{ item.cip | uppercase }}</td>
             <td>{{ item.mobilePhone }}</td>
             <td>{{ item.email }}</td>

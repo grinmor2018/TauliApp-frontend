@@ -4,7 +4,9 @@ export class RegUsuari{
 
   constructor(
 
-    public username: string,
+    public nom: string,
+    public cognom1: string,
+    public cognom2: string,
     public password: string,
     public nif: string,
     public cip: string,

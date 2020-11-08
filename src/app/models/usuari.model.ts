@@ -2,7 +2,9 @@ export class Usuari{
 
   constructor(
 
-    public username: string,
+    public nom: string,
+    public cognom1: string,
+    public cognom2: string,
     public nif: string,
     public cip: string,
     public mobilePhone: string,

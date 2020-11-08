@@ -19,7 +19,9 @@ export class LlistaRegUsuarisComponent implements OnInit {
   item: RegUsuari = {
     nif: "",
     password: "",
-    username: "",
+    nom: "",
+    cognom1: "",
+    cognom2: "",
     cip: "",
     mobilePhone: "",
     email: "",
@@ -58,16 +60,33 @@ export class LlistaRegUsuarisComponent implements OnInit {
   }
 
   deleteItem(id: string) {
-    if (confirm("Are you sure to delete?")) {
-      this.respostasService.deleteUser(id).subscribe(
-        (res) => {
-          this.getItems();
-          Swal.fire("Exit", "Usuari esborrat", "warning");
-          this.router.navigate(["/component/users"]);
-        },
-        (err) => console.log(err)
-      );
-    }
+
+    Swal.fire({
+      title: 'Estàs segur?',
+      text: "No podràs recuperar l'usuari!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, esborra-ho!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.respostasService.deleteUser(id).subscribe(
+          (res) => {
+            this.getItems();
+            Swal.fire({
+              icon: 'warning',
+              title: 'Usuari esborrat',
+              showConfirmButton: false,
+              timer: 1000
+            })
+            this.router.navigate(["/component/users"]);
+          },
+          (err) => console.log(err)
+        );
+      }
+    })
+
   }
 
   editItem() {
@@ -84,7 +103,9 @@ export class LlistaRegUsuarisComponent implements OnInit {
           this.respostasService.selectedRegUsuari = {
             nif: "",
             password: "",
-            username: "",
+            nom: "",
+            cognom1: "",
+            cognom2: "",
             cip: "",
             mobilePhone: "",
             email: "",
@@ -96,6 +117,11 @@ export class LlistaRegUsuarisComponent implements OnInit {
         (err) => console.log(err)
       );
     }
+  }
+
+  resetForm(){
+    this.editing = false;
+    //this.router.navigate(["/component/users"]);
   }
 
   loadForm(id: string) {

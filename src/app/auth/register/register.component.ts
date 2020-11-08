@@ -18,7 +18,9 @@ export class RegisterComponent implements OnInit {
   item: RegUsuari = {
     nif: "",
     password: "",
-    username: "",
+    nom: "",
+    cognom1: "",
+    cognom2: "",
     cip: "",
     mobilePhone: "",
     email: "",
@@ -42,7 +44,9 @@ export class RegisterComponent implements OnInit {
     this.item = {
       nif: "",
       password: "",
-      username: "",
+      nom: "",
+      cognom1: "",
+      cognom2: "",
       cip: "",
       mobilePhone: "",
       email: "",
@@ -120,7 +124,9 @@ export class RegisterComponent implements OnInit {
           this.respostasService.selectedRegUsuari = {
             nif: "",
             password: "",
-            username: "",
+            nom: "",
+            cognom1: "",
+            cognom2: "",
             cip: "",
             mobilePhone: "",
             email: "",

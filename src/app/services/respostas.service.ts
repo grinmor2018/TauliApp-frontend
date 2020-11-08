@@ -22,7 +22,9 @@ export class RespostasService {
    public selectedRegUsuari: RegUsuari = {
     nif: '',
     password:'',
-    username: '',
+    nom: '',
+    cognom1: '',
+    cognom2: '',
     cip: '',
     mobilePhone: '',
     email: '',

@@ -24,7 +24,7 @@ export class CercaPipe implements PipeTransform {
 
     if (tipuscerca === '1'){
       for (const resultat of llista) {
-        if (resultat.username.toLowerCase().includes(texte.toLowerCase()) ) {
+        if (resultat.cognom1.toLowerCase().includes(texte.toLowerCase()) ) {
           resultats.push(resultat);
         }
       }

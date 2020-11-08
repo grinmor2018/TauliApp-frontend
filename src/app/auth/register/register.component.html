@@ -43,13 +43,13 @@
           <div class="col-xs-2">
             <input
               class="form-control input-sm"
-              type="password"
-              name="password"
+              type="text"
+              name="nom"
               required=""
-              placeholder=" Confirm Password"
-              [(ngModel)]="this.respostasService.selectedRegUsuari.password"
+              placeholder="Nom"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.nom"
             />
-            <label><small>Confirm password</small></label>
+            <label><small>Nom</small></label>
           </div>
         </div>
         <div class="form-group">
@@ -57,12 +57,25 @@
             <input
               class="form-control input-sm"
               type="text"
-              name="username"
+              name="cognom1"
               required=""
-              placeholder="Username"
-              [(ngModel)]="this.respostasService.selectedRegUsuari.username"
+              placeholder="Primer cognom"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.cognom1"
             />
-            <label><small>Username</small></label>
+            <label><small>Primer cognom</small></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input
+              class="form-control input-sm"
+              type="text"
+              name="cognom2"
+              required=""
+              placeholder="Segon cognom"
+              [(ngModel)]="this.respostasService.selectedRegUsuari.cognom2"
+            />
+            <label><small>Segon cognom</small></label>
           </div>
         </div>
         <div class="form-group">
